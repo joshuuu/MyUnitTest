@@ -37,7 +37,6 @@ class Cart
         $greenCount = count($this->productAll[Product::$TAG_GREEN]);
 
         return ($redCount == $greenCount);
-    
     }
 
     public function checkout()

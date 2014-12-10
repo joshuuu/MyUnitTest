@@ -2,21 +2,17 @@
 
 require_once __DIR__ . '/../Cart.php';
 require_once __DIR__ . '/../Product.php';
+require_once __DIR__ . '/../Productmanager.php';
 
 class CartTest extends PHPUnit_Framework_TestCase
 {
     private $cart;
-    private $products = [];
+    private $products;
 
     protected function setUp()
     {
         $this->cart = new Cart();
-        $this->products = [
-            new Product('Red01', 100, Product::$TAG_RED),
-            new Product('Red02', 50, Product::$TAG_RED),
-            new Product('Green01', 25, Product::$TAG_GREEN),
-            new Product('Green02', 60, Product::$TAG_GREEN)   
-        ];
+        $this->products = ProductManager::getInstance()->getProductList();
     }
 
     protected function tearDown()
